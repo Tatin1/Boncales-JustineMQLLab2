@@ -5,9 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 function UpdateUser(){
     const { id } = useParams()
 
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [age, setAge] = useState()
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [age, setAge] = useState('')
 
     const navigate = useNavigate()
 
@@ -24,7 +24,7 @@ function UpdateUser(){
             }
         }
         fetchData();
-    }, [])
+    }, [id])
 
     const handleUpdate = (e) => {
         e.preventDefault()

@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-function CreateUser(){
+function CreateUser() {
 
     const [name, setName] = useState()
     const [email, setEmail] = useState()
@@ -12,12 +12,12 @@ function CreateUser(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3000/create', { name, email, age })
+        axios.post('http://localhost:3000/create', {name,email,age})
             .then(res => {
                 console.log(res);
                 navigate('/')
             })
-            .catch(err => console.log(err))
+            .catch (err => console.log(err))
     }
 
     return (
@@ -37,19 +37,19 @@ function CreateUser(){
                     <div className="mb-2">
                         <label htmlFor="">Email</label>
                         <input
-                            type="text"
-                            placeholder="Enter Email"
-                            className="form-control"
-                            onChange={(e) => setEmail(e.target.value)}
+                        type="email"
+                        placeholder="Enter Email"
+                        className="form-control"
+                        onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div className="mb-2">
                         <label htmlFor="">Age</label>
                         <input
-                            type="text"
-                            placeholder="Enter Age"
-                            className="form-control"
-                            onChange={(e) => setAge(e.target.value)}
+                        type="text"
+                        placeholder="Enter Age"
+                        className="form-control"
+                        onChange={(e) => setAge(e.target.value)}
                         />
                     </div>
                     <button className="btn btn-success">Submit</button>
